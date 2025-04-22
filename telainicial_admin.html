@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="telainicial_admin.css"> <!-- Corrigi o caminho do CSS -->
+    <link rel="shortcut icon" href="imagens/WhatsApp-Image-2024-11-26-at-16.45.11.ico" type="image/x-icon">
+    <title>Green City</title>
+</head>
+<body>
+    <nav id="sidebar">
+        <div id="sidebar_content">
+            <div id="user">
+                <img src="imagens/admin.jpeg" id="user_avatar" alt="Avatar">
+    
+                <p id="user_infos">
+                    <span class="item-description">
+                        Victor Hugo
+                    </span>
+                    <span class="item-description">
+                        Administrador
+                    </span>
+                </p>
+            </div>
+    
+            <ul id="side_items">
+
+                <li class="side-item" data-page="fornecedores">
+                    <a href="#" onclick="navigate('fornecedores')">
+                        <i class="fa-solid fa-user"></i>
+                        <span class="item-description">
+                            Fornecedores
+                        </span>
+                    </a>
+                </li>
+
+                <li class="side-item" data-page="cadastro">
+                    <a href="cadastrofornecedores.html" onclick="navigate('cadastrofornecedores')">
+                        <i class="fa-solid fa-address-card"></i>     
+                        <span class="item-description">
+                            Cadastro Fornecedor
+                        </span>
+                    </a>
+                </li>
+    
+                <li class="side-item" data-page="producao">
+                    <a href="#" onclick="navigate('producao')">
+                        <i class="fa-solid fa-seedling"></i>
+                        <span class="item-description">
+                            Produção
+                        </span>
+                    </a>
+                </li>
+    
+                <li class="side-item" data-page="pedidos">
+                    <a href="#" onclick="navigate('pedidos')">
+                        <i class="fa-solid fa-truck-fast"></i>
+                        <span class="item-description">
+                            Pedidos
+                        </span>
+                    </a>
+                </li>
+
+                <li class="side-item" data-page="estoque">
+                    <a href="#" onclick="navigate('estoque')">
+                        <i class="fa-solid fa-box"></i>
+                        <span class="item-description">
+                            Estoque
+                        </span>
+                    </a>
+                </li>
+                
+                <li class="side-item" data-page="conta">
+                    <a href="#" onclick="navigate('conta_admin')">
+                        <i class="fa-solid fa-gear"></i>
+                        <span class="item-description">
+                            Conta
+                        </span>
+                    </a>
+                </li>
+            </ul>
+    
+            <button id="open_btn">
+                <i id="open_btn_icon" class="fa-solid fa-chevron-right"></i>
+            </button>
+        </div>
+
+        <div id="logout">
+            <button id="logout_btn" onclick="showConfirmModal()">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span class="item-description">Logout</span>
+            </button>
+        </div>
+        
+        <!-- Modal de Confirmação -->
+        <div id="confirmModal" class="modal">
+            <div class="modal-content">
+                <p>Você realmente deseja sair?</p>
+                <button id="confirmYes" class="btn">Sim</button>
+                <button id="confirmNo" class="btn">Não</button>
+            </div>
+        </div>
+        
+        <script>
+            function showConfirmModal() {
+                // Exibe o modal de confirmação
+                document.getElementById("confirmModal").style.display = "block";
+            }
+        
+            // Função para o botão "Sim"
+            document.getElementById("confirmYes").onclick = function() {
+                window.location.href = "index.html"; // Redireciona para a página index.html
+            };
+        
+            // Função para o botão "Não"
+            document.getElementById("confirmNo").onclick = function() {
+                document.getElementById("confirmModal").style.display = "none"; // Fecha o modal
+            };
+        
+            // Fecha o modal se o usuário clicar fora dele
+            window.onclick = function(event) {
+                var modal = document.getElementById("confirmModal");
+                if (event.target === modal) {
+                    modal.style.display = "none";
+                }
+            }
+        </script>
+        
+             
+        
+    </nav>
+    <main id="main-content">
+        <!-- O conteúdo será carregado dinamicamente pelo JavaScript -->
+        <main id="main-content">
+        
+    
+            <!-- Seção de Informações para o Administrador -->
+            <section id="admin-info">
+                <div class="info-card">
+                    <h3><i class="fas fa-chart-line"></i> Estatísticas de Vendas</h3>
+                    <p><strong>Vendas do dia:</strong> <span class="highlight">R$ 2.500</span></p>
+                    <p><strong>Vendas do mês:</strong> <span class="highlight">R$ 45.000</span></p>
+                    <p><strong>Produtos mais vendidos:</strong> Tomates, Alface, Cenoura</p>
+                    <p><strong>Total de vendas realizadas:</strong> <span class="highlight">152</span> transações</p>
+                    <p><strong>Clientes recorrentes:</strong> <span class="highlight">12</span> empresas / <span class="highlight">28</span> pessoas físicas</p>
+                    <p><strong>Estoque disponível:</strong> Tomates: 200 pacotes | Alface: 500 pacotes | Cenoura: 20kg</p>
+                </div>
+                
+                
+                <div class="info-card">
+                    <h3><i class="fas fa-users"></i> Estatísticas de Fornecedores</h3>
+                    <p><strong>Fornecedores ativos:</strong> <span class="highlight">10</span></p>
+                    <p><strong>Fornecedores inativos:</strong> <span class="highlight">0</span></p>
+                    <p><strong>Último fornecedor adicionado:</strong> Fazenda Verde (há 3 dias)</p>
+                    <p><strong>Produtos mais fornecidos:</strong> Sementes de Alface, Fertilizante Orgânico</p>
+                    <p><strong>Frequência de entrega:</strong> Média de 2 entregas por semana</p>
+                    <p><strong>Desempenho dos fornecedores:</strong>
+                       
+                        <li><strong>Fazenda Verde:</strong> 95% entregas no prazo</li>
+                        <li><strong>Orgânicos da Terra:</strong> 88% entregas no prazo</li>
+                        
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Contatos Suporte</h3>
+                    <li><a href="https://wa.me/5512996739807?" target="_blank" style="text-decoration: none; color: inherit;">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" style="width: 20px; vertical-align: middle; margin-right: 8px;">
+                        Victor Hugo (Fornecedores)
+                    </a>
+                    <li><a href="https://wa.me/5512988089087?" target="_blank" style="text-decoration: none; color: inherit;">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" style="width: 20px; vertical-align: middle; margin-right: 8px;">
+                        Niuam Spolidorio (Suporte)
+                    </a>
+                    <li><a href="https://wa.me/5512987018574?" target="_blank" style="text-decoration: none; color: inherit;">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" style="width: 20px; vertical-align: middle; margin-right: 8px;">
+                        Matheus Rafael (Estoque)
+                    </a> 
+                    <li><a href="https://wa.me/5512996578458?" target="_blank" style="text-decoration: none; color: inherit;">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" style="width: 20px; vertical-align: middle; margin-right: 8px;">
+                        Gabriel Contatori (Logística)
+                    </a> 
+                    <li><a href="https://wa.me/5512997244758?" target="_blank" style="text-decoration: none; color: inherit;">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" style="width: 20px; vertical-align: middle; margin-right: 8px;">
+                        Maria Clara (Vendas)
+                    </a> 
+                    <li><a href="https://wa.me/5512981911521?" target="_blank" style="text-decoration: none; color: inherit;">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" style="width: 20px; vertical-align: middle; margin-right: 8px;">
+                        Sabrina (Produção)
+                    </a> 
+                    <h3>Funcionamento das 7 às 22hr</h3>  
+                </div>
+            </section>
+        </main>
+    </main>
+
+    
+
+    <!-- Corrigido o caminho do arquivo JavaScript -->
+    <script src="sidebar.js"></script>
+    <script src="fornecedor.js"></script>
+    <script src="pedido.js"></script>
+    <script src="producao.js"></script>
+    <script src="notificacao.js"></script>
+    
+    
+
+</body>
+</html>
+
+

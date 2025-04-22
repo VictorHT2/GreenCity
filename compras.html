@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Green City</title>
+    <link rel="stylesheet" href="compras.css">
+    <link rel="shortcut icon" href="imagens/WhatsApp-Image-2024-11-26-at-16.45.11.ico" type="image/x-icon">
+    <script type="module" src="compras.js"></script>
+</head>
+<body>
+    <div class="container-cadastro">
+        <h2 class="titulo-cadastro">Cadastro de Compras</h2>
+        <form id="form-cadastro">
+            <label for="fornecedor">Fornecedor:</label>
+            <input type="text" id="fornecedor" name="fornecedor">
+            <br>
+        
+            <label for="produto">Produto:</label>
+            <input type="text" id="produto" name="produto">
+            <br>
+        
+            <label for="quantidade">Quantidade:</label>
+            <input type="text" id="quantidade" name="quantidade">
+            <br>
+        
+            <button type="button" id="salvar-compra" onclick="cadastrarCompra()">Salvar Compra</button>
+            <button type="button" class="botao-editar" id="editar-compra" style="display: none;" onclick="editarCompra()">Editar Compra</button>
+            <button type="button" class="botao-voltar" onclick="voltarParaTelaInicial()">Voltar</button>
+        </form>
+        
+        <div id="lista-vendas"></div>
+        
+    <script type="module" src="compras.js"></script>
+</body>
+</html>

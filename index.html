@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="imagens/WhatsApp-Image-2024-11-26-at-16.45.11.ico" type="image/x-icon">
+  <link rel="stylesheet" href="index.css">
+  <title>Green City</title>
+
+  <script>
+    function redirecionarAdmin(event) {
+      event.preventDefault(); // Evita que o formulário recarregue a página
+      window.location.href = "telainicial_admin.html"; // Redireciona para a tela do admin
+    }
+  </script>
+</head>
+
+<body>
+  <main class="container" id="container">
+    <section class="form-container sign-in">
+      <form onsubmit="redirecionarAdmin(event)">
+        <h1>Entrar</h1>                    
+        <span>Use sua senha e email</span>
+        <input type="email" placeholder="Email" required>
+        <input type="password" placeholder="Senha" required>
+        <button type="submit">Entrar</button>
+        <br>
+        <span class="percasenha">Em caso de perda de senha, contate o seu supervisor</span>
+      </form>
+    </section>
+    <aside class="toggle-container">
+      <div class="toggle">
+        <div class="toggle-panel toggle-right">
+          <h1>Green City</h1>
+        </div>
+      </div>
+    </aside>
+
+    <img id="user-image" src="" alt="Imagem do Usuário" style="display:none;">
+  </main>
+</body>
+</html>
